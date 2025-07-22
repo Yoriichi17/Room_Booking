@@ -34,7 +34,7 @@ const RegisterRoom = () => {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/room/register", requestBody);
+      await axios.post("https://room-booking-kzs4.onrender.com/api/room/register", requestBody);
       alert("Room registered successfully!");
       reset();
     } catch (error) {

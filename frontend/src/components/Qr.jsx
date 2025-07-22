@@ -11,7 +11,7 @@ function Qr() {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/room/fetch");
+        const response = await fetch("https://room-booking-kzs4.onrender.com/api/room/fetch");
         if (!response.ok)
           throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
@@ -21,7 +21,7 @@ function Qr() {
             const timeSlot = getNextISTSlotString(room.slotSize || 15);
             return {
               ...room,
-              qrCode: `http://localhost:5173/book?room=${encodeURIComponent(
+              qrCode: `https://room-booking-jet.vercel.app/book?room=${encodeURIComponent(
                 room.name
               )}&time=${timeSlot}`,
             };
