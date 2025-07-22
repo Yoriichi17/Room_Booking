@@ -5,8 +5,6 @@ exports.registerRoom = async (req, res) => {
     const { name, type, slotSize, meetingSize, capacity, startTime, endTime } =
       req.body;
 
-    // ---------- EDGE CASE CHECKS ---------- //
-
     // 1. Required fields
     if (
       !name ||

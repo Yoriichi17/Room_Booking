@@ -24,7 +24,7 @@ exports.getBookingsByDate = async (req, res) => {
       query.roomId = roomId;
     }
 
-    const bookings = await Book.find({ date }).populate("roomId");
+    const bookings = await Book.find(query).populate("roomId");
 
     return res
       .status(200)
