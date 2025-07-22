@@ -9,7 +9,12 @@ const app = express();
 const roomRoutes = require("./route/room.route");
 const bookingRoutes = require("./route/book.route");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://room-booking-sepia.vercel.app/"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
