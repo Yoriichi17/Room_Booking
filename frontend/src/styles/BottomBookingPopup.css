@@ -1,0 +1,204 @@
+/* Overlay */
+.bottom-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* Popup Container */
+.bottom-popup {
+  background-color: #fff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 20px 20px 0 0;
+  padding: 24px;
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.12);
+  animation: slideUp 0.3s ease-in-out;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Headings */
+.bottom-popup h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* Text Fields (Room + Date + Time) */
+.bottom-popup p {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Group room and date side-by-side */
+.bottom-popup p:nth-of-type(1),
+.bottom-popup p:nth-of-type(2) {
+  display: inline-block;
+  width: 48%;
+  margin-right: 2%;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+/* Time stays full width */
+.bottom-popup p:nth-of-type(3) {
+  display: block;
+  width: 100%;
+}
+
+/* Label */
+.bottom-popup label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 14px;
+}
+
+/* Input */
+.popup-input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popup-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Error */
+.popup-error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* Actions */
+.popup-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: nowrap;
+}
+
+/* Buttons */
+.confirm-btn,
+.cancel-btn {
+  flex: 1;
+  margin-top: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+/* Confirm (Book) Button */
+.confirm-btn {
+  background-color: #22c55e;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background-color: #16a34a;
+  transform: translateY(-1px);
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.cancel-btn:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .bottom-popup {
+    padding: 16px 18px;
+    border-radius: 16px 16px 0 0;
+    max-height: 49vh;
+    overflow-y: auto;
+  }
+
+  .bottom-popup p:nth-of-type(1),
+  .bottom-popup p:nth-of-type(2) {
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+    font-size: 14px;
+  }
+
+  .bottom-popup p:nth-of-type(3) {
+    font-size: 14px;
+  }
+
+  .popup-actions {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .confirm-btn,
+  .cancel-btn {
+    width: 100%;
+    margin-top: 10px;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .popup-input {
+    font-size: 15px;
+  }
+
+  .bottom-popup h3 {
+    font-size: 18px;
+  }
+}

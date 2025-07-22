@@ -1,0 +1,234 @@
+/* Booking Page Container */
+.booking-page {
+  padding: 32px 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+  overflow-x: auto; /* ✅ Allow horizontal scrolling */
+  white-space: nowrap; /* ✅ Prevent wrap */
+  -webkit-overflow-scrolling: touch; /* ✅ Smooth iOS scroll */
+  background-color: #1e3a8a;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+}
+
+.navbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari: hide scrollbar */
+}
+
+/* NAVBAR Tabs */
+.tab {
+  padding: 8px 20px;
+  background-color: #60a5fa;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-shrink: 0; /* ✅ Prevent tabs from shrinking in horizontal overflow */
+}
+
+.tab:hover {
+  background-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+.tab.active {
+  background-color: #1d4ed8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Date Picker */
+.date-picker {
+  margin: 12px auto 20px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f8fafc;
+}
+
+/* Slot Table */
+.slot-table {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 88px;
+}
+
+/* Hour Row */
+.hour-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Hour Label */
+.hour-label {
+  width: 80px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #222;
+  text-align: right;
+}
+
+/* Hour Slots */
+.hour-slots {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Slot Styling */
+.slot {
+  width: 85px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: white;
+  transition: 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.slot:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Slot States */
+.slot.available {
+  background-color: white;
+}
+
+.slot.booked {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  cursor: not-allowed;
+  border: 1px solid #fca5a5;
+}
+
+.slot.selected {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.disabled-slot {
+  background-color: #ddd;
+  color: #888;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Booking Popup */
+.booking-popup {
+  margin-top: 24px;
+  padding: 28px 24px;
+  background-color: #f9fafb;
+  border-radius: 16px;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .booking-page {
+    padding: 16px 10px;
+  }
+
+  .navbar {
+    justify-content: flex-start;
+    flex-wrap: nowrap; /* ✅ Force single line in mobile */
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+
+  .tab {
+    padding: 6px 14px;
+    font-size: 14px;
+    flex-shrink: 0; /* ✅ Prevent tabs from shrinking */
+  }
+
+  .date-picker {
+    font-size: 15px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    margin-right: 10px;
+  }
+
+  .hour-label {
+    text-align: center;
+    width: auto;
+    font-size: 14px;
+  }
+
+  .slot {
+    width: 68px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .slot-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+  }
+
+  .booking-popup {
+    padding: 20px 16px;
+    max-width: 95%;
+    min-height: 40vh;
+  }
+
+  .booking-popup h3 {
+    font-size: 18px;
+  }
+
+  .booking-popup p {
+    font-size: 15px;
+  }
+
+  .booking-popup .book-btn,
+  .booking-popup .cancel-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
