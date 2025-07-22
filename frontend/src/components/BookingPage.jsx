@@ -78,7 +78,7 @@ const BookingPage = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const res = await axios.get("https://room-booking-kzs4.onrender.com/api/room/fetch");
+        const res = await axios.get("https://room-booking-rjpo.onrender.com/api/room/fetch");
         setRooms(res.data.rooms);
 
         const roomName = searchParams.get("room");
@@ -105,7 +105,7 @@ const BookingPage = () => {
       if (!activeRoom || !selectedDate) return;
       try {
         const res = await axios.get(
-          `https://room-booking-kzs4.onrender.com/api/booking/fetch?date=${selectedDate}&roomId=${activeRoom._id}`
+          `https://room-booking-rjpo.onrender.com/api/booking/fetch?date=${selectedDate}&roomId=${activeRoom._id}`
         );
         setBookings(res.data.bookings || []);
       } catch (err) {
@@ -236,7 +236,7 @@ const BookingPage = () => {
         capacity: enteredCapacity,
       };
       const res = await axios.post(
-        "https://room-booking-kzs4.onrender.com/api/booking/createBooking",
+        "https://room-booking-rjpo.onrender.com/api/booking/createBooking",
         payload
       );
       alert("Booking successful");
@@ -253,7 +253,7 @@ const BookingPage = () => {
   const handleCancelBooking = async () => {
     try {
       await axios.delete(
-        `https://room-booking-kzs4.onrender.com/api/booking/cancel/${slotInfo._id}`
+        `https://room-booking-rjpo.onrender.com/api/booking/cancel/${slotInfo._id}`
       );
       alert("Booking cancelled");
       setBookings(bookings.filter((b) => b._id !== slotInfo._id));

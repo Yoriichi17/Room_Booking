@@ -11,7 +11,7 @@ function Qr() {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await fetch("https://room-booking-kzs4.onrender.com/api/room/fetch");
+        const response = await fetch("https://room-booking-rjpo.onrender.com/api/room/fetch");
         if (!response.ok)
           throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
