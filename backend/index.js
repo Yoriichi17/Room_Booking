@@ -9,12 +9,7 @@ const app = express();
 const roomRoutes = require("./route/room.route");
 const bookingRoutes = require("./route/book.route");
 
-app.use(
-  cors({
-    origin: ["http://localhost:5173" , "https://room-booking-jet.vercel.app/"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
