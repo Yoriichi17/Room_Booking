@@ -9,21 +9,15 @@ const app = express();
 const roomRoutes = require("./route/room.route");
 const bookingRoutes = require("./route/book.route");
 
-app.use(
-  cors({
-    origin: ["https://room-booking-sepia.vercel.app/"],
-    credentials: true,
-  })
-);
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.json()); 
 
 connectDb();
 
 app.use("/api/room", roomRoutes);
 app.use("/api/booking", bookingRoutes);
 
-app.listen(PORT, () => {
+app.listen(PORT || 5000, () => {
   console.log(`SERVER LISTENING ON PORT: ${PORT}`);
 });
 
