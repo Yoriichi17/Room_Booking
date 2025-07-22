@@ -21,7 +21,7 @@ function Qr() {
             const timeSlot = getNextISTSlotString(room.slotSize || 15);
             return {
               ...room,
-              qrCode: `https://room-booking-sepia.vercel.app/book?room=${encodeURIComponent(
+              qrCode: `https://room-booking-cqfy.vercel.app/book?room=${encodeURIComponent(
                 room.name
               )}&time=${timeSlot}`,
             };
